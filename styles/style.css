@@ -1,5 +1,402 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image, url("../images/cover-image-dark.png"));
+  color: var(--text-color, #f1b2ce);
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: var(--text-size, 18px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  border-inline-end: 1px solid var(--decor-color, #ff0070);
+  border-block-start: 1px solid var(--decor-color, #ff0070);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  border-inline-start: 1px solid var(--decor-color, #ff0070);
+  border-block-end: 1px solid var(--decor-color, #ff0070);
+}
+
+.header__decor::before {
+  content: "REC";
+  position: absolute;
+  color: var(--decor-color, #ff0070);
+  inset-inline-end: 38px;
+  inset-block-start: 9px;
+  line-height: 27px;
+}
+
+.header__decor::after {
+  content: "";
+  position: absolute;
+  box-shadow: 0 0 4px 3px var(--decor-color, #ff0070);
+  block-size: 9px;
+  inline-size: 9px;
+  inset-inline-end: 19px;
+  inset-block-start: 19px;
+  background-color: var(--decor-color, #ff0070);
+  border-radius: 50%;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color, #ff0070);
+  background-color: transparent;
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  border: none;
+  font-size: var(--text-size, 18px);
+  line-height: 18px;
+  block-size: 26px;
+  padding: 1px 13px 3px 13px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--decor-color, #ff0070);
+  outline-offset: 1px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: solid 1px var(--decor-color, #ff0070);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header-title {
+  color: var(--hf-title-color, #db00ff);
+  font-weight: 700;
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  line-height: 83.5%;
+  margin-block-start: 66px;
+}
+
+.header-text {
+  font-family: var(--font-family, "IBM Plex Mono", monospace), monospace;
+  font-size: var(--text-size, 18px);
+  color: var(--title-color, #000028);
+  line-height: 23.2px;
+  inline-size: 355px;
+  font-weight: bold;
+  margin-block-start: 54px;
+  margin-block-end: 57px;
+}
+
+.title-decor {
+  background-color: var(--accent-color, #ff0070);
+}
+
+.content-main {
+  display: grid;
+  gap: 50px;
+  padding: 10px;
+  margin-block-start: 30px;
+}
+
+.content-section {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+  color: var(--decor-color, #ff0070);
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.section-card {
+  display: grid;
+  gap: 20px;
+}
+
+.card-list-section {
+  display: grid;
+  gap: 19px;
+}
+
+.card-list-section-item {
+  display: grid;
+  gap: 11px;
+  line-height: 23.4px;
+}
+
+.card-title {
+  color: var(--title-color, #000028);
+  font-weight: 700;
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+  font-size: var(--text-size, 18px);
+}
+
+.card-text {
+  color: var(--text-color, #f1b2ce);
+  font-weight: 400;
+  font-family: var(--font-family, "IBM Plex Mono", monospace);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color, #f1b2ce);
+}
+
+.section-gallery {
+  gap: 10px;
+}
+
+.gallery__title {
+  color: var(--title-color, #000028);
+  font-weight: 700;
+  font-size: var(--text-size, 18px);
+}
+
+.gallery-list {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-list-item {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 668px;
+  margin-block-start: 30px;
+}
+
+.footer-title {
+  color: var(--hf-title-color, #db00ff);
+  font-family: var( --font-family, "IBM Plex Mono", monospace);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+@media (width >= 768px) {
+  .header {
+    padding-inline-start: 0;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .header__decor::before {
+    inset-inline-end: 48px;
+    inset-block-start: 19px;
+  }
+
+  .header__decor::after {
+    inset-inline-end: 29px;
+    inset-block-start: 28px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: max(112px, 4vw);
+    margin-inline-end: max(10px);
+  }
+
+  .header-title {
+    margin-block-start: max(176px, 5vw);
+  }
+
+  .header-text {
+    justify-self: end;
+    margin-block-start: max(160px, 4vw);
+    margin-block-end: max(173px, 4vw);
+    margin-inline-end: max(19px);
+  }
+
+  .content-main {
+    display: grid;
+    gap: 80px;
+    padding: 30px 20px;
+  }
+
+  .section-why {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section-why .section-title {
+    grid-column: 1;
+  }
+
+  .section-what {
+    display: grid;
+    grid-template-columns: min-content 1fr 1fr;
+  }
+
+  .section-what .section-card {
+    grid-column: span 3;
+  }
+
+  .section-how {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section-how .section-title {
+    grid-column: 1;
+  }
+
+  .section-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-list-item:first-child,
+  .gallery-list-item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .gallery-list-item:nth-child(2),
+  .gallery-list-item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+
+  .gallery-img {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-start: 0;
+    min-block-size: 182px;
+    margin-inline-start: 20px;
+   }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header-title {
+    font-family: var(--font-family, "IBM Plex Mono", monospace);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-block-start: max(119px, 5vw);
+  }
+
+  .header-text {
+    justify-self: end;
+    margin-block-start: max(113px, 4vw);
+    margin-block-end: max(124px, 4vw);
+    margin-inline-end: max(10px);
+    block-size: 71px;
+    inline-size: 491px;
+  }
+
+  .content-section {
+    column-gap: 11px;
+  }
+
+  .section-what {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section-what .section-card {
+    grid-column: span 3;
+  }
+
+  .section-what .card-list-section {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
