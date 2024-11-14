@@ -6,7 +6,6 @@
   --accent-color: #ff8dcb;
   --hf-title-color: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
-  --font-family: "IBM Plex Mono", monospace;
   --decor-color-button: #32312d66;
   --header-decor-visibility: hidden;
 }
@@ -24,7 +23,6 @@
     --accent-color: #ff8dcb;
     --hf-title-color: #ffc2e6;
     --bg-image: url(../images/cover-image-light.png);
-    --font-family: "IBM Plex Mono", monospace;
     --decor-color-button: #32312d66;
     --header-decor-visibility: hidden;
   }

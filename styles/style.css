@@ -78,7 +78,7 @@
 }
 
 .header__theme-menu-button {
-  color: var(--accent-color, #ff0070);
+  color: var(--decor-color, #ff0070);
   background-color: transparent;
   font-family: var(--font-family, "IBM Plex Mono", monospace);
   border: none;
@@ -98,10 +98,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: solid 1px var(--decor-color, #ff0070);
+  border-bottom: solid 1px currentColor;
 }
 
 .header__theme-menu-button_active {
+  outline: 1px solid var(--decor-color, #ff0070);
   pointer-events: none;
 }
 
@@ -109,7 +110,7 @@
   color: var(--hf-title-color, #db00ff);
   font-weight: 700;
   font-family: var(--font-family, "IBM Plex Mono", monospace);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--hft-font-size-mobile, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   line-height: 83.5%;
   margin-block-start: 66px;
@@ -164,6 +165,10 @@
   line-height: 23.4px;
 }
 
+.section-how .card-list-section .card-title {
+  font-weight: 400;
+}
+
 .card-title {
   color: var(--title-color, #000028);
   font-weight: 700;
@@ -183,7 +188,7 @@
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--text-color, #f1b2ce);
+  border-bottom: 1px solid currentColor;
 }
 
 .link:focus {
@@ -191,7 +196,7 @@
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--text-color, #f1b2ce);
+  outline: 1px solid currentColor;
 }
 
 .section-gallery {
@@ -227,14 +232,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  min-height: 668px;
+  block-size: 100vh;
+  min-block-size: 668px;
   margin-block-start: 30px;
 }
 
 .footer-title {
   color: var(--hf-title-color, #db00ff);
   font-family: var( --font-family, "IBM Plex Mono", monospace);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--hft-font-size-mobile, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
   line-height: 82.5%;
   font-weight: 700;
   text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
@@ -272,13 +278,15 @@
 
   .header-title {
     margin-block-start: max(176px, 5vw);
+    font-size: var(--hft-font-size-dekstop, clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem));
   }
 
   .header-text {
     justify-self: end;
     margin-block-start: max(160px, 4vw);
     margin-block-end: max(173px, 4vw);
-    margin-inline-end: max(19px);
+    margin-inline-end: max(10px);
+    inline-size: 364px;
   }
 
   .content-main {
@@ -350,6 +358,8 @@
 @media (width >= 1024px) {
   .header__theme-menu {
     justify-self: center;
+    align-self: start;
+    padding: 10px;
     margin-block-start: 0;
     min-block-size: 182px;
     margin-inline-start: 20px;
@@ -370,7 +380,6 @@
     margin-block-start: max(113px, 4vw);
     margin-block-end: max(124px, 4vw);
     margin-inline-end: max(10px);
-    block-size: 71px;
     inline-size: 491px;
   }
 
