@@ -89,8 +89,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--decor-color, #ff0070);
-  outline-offset: 1px;
+  outline: 1px solid var(--button-hover, #ff007066);
 }
 
 .header__theme-menu-button:focus {
@@ -98,7 +97,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: solid 1px currentColor;
+  border-bottom: currentColor;
 }
 
 .header__theme-menu-button_active {
@@ -188,7 +187,7 @@
 }
 
 .link:hover {
-  border-bottom: 1px solid currentColor;
+  border-bottom: currentColor;
 }
 
 .link:focus {
@@ -196,7 +195,7 @@
 }
 
 .link:focus-visible {
-  outline: 1px solid currentColor;
+  outline: currentColor;
 }
 
 .section-gallery {
@@ -349,10 +348,6 @@
     object-fit: cover;
     object-position: center;
   }
-
-  .footer {
-    min-height: 1024px;
-  }
 }
 
 @media (width >= 1024px) {
@@ -361,7 +356,6 @@
     align-self: start;
     padding: 10px;
     margin-block-start: 0;
-    min-block-size: 182px;
     margin-inline-start: 20px;
    }
 
@@ -399,10 +393,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: start;
-  }
-
-  .footer {
-    min-height: 768px;
   }
 
   .footer-title {

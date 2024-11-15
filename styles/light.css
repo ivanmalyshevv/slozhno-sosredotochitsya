@@ -5,6 +5,7 @@
   --decor-color:  #353430;
   --accent-color: #ff8dcb;
   --hf-title-color: #ffc2e6;
+  --button-hover: #32312d66;
   --bg-image: url(../images/cover-image-light.png);
   --decor-color-button: #32312d66;
   --header-decor-visibility: hidden;
@@ -22,6 +23,7 @@
     --decor-color:  #353430;
     --accent-color: #ff8dcb;
     --hf-title-color: #ffc2e6;
+    --button-hover: #32312d66;
     --bg-image: url(../images/cover-image-light.png);
     --decor-color-button: #32312d66;
     --header-decor-visibility: hidden;
