@@ -98,7 +98,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: currentColor;
+  border-bottom: solid 1px currentColor;
 }
 
 .header__theme-menu-button_active {
@@ -188,7 +188,7 @@
 }
 
 .link:hover {
-  border-bottom: currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .link:focus {
@@ -196,7 +196,7 @@
 }
 
 .link:focus-visible {
-  outline: currentColor;
+  outline: 1px solid currentColor;
 }
 
 .section-gallery {
